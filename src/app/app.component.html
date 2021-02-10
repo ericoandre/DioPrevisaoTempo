@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+      <img src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30"
+          class="d-inline-block align-top" alt="">
+      {{mensagen}}
+  </a>
+  <div class="navbar-portal-outlet"></div>
+  <!-- <div>
+      <div class="navbar-nav">
+          <a class="nav-item nav-link"  routerLinActive='active' routerLink='home'>Home</a>
+          <a class="nav-item nav-link"  routerLinActive='active' routerLink='pricing'>Pricing</a>
+      </div>
+  </div> -->
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 bg-light border-right">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Início</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/bookmarks">Favoritos</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-sm-9">
+
+    	<router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

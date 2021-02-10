@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="search-container">
+
+    <div class="form-group">
+      <label>Pesquisar</label>
+      <div>
+        <input class="form-control" [formControl]="pesquisahomeControl">
+        <button class="btn btn-dark" [disabled]='!pesquisahomeControl.valid' (click)='doSearch()'>Pesquisa</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Pesquisar com <i>autocomplete</i></label>
+      <dio-cities-typeahead  [formControl]="pesquisahomeControlWithAutocomplete"></dio-cities-typeahead>
+    </div>
+  </div>
+
+
+  <dio-loader *ngIf='loading$ | async'></dio-loader>
+
+  <div *ngIf='!(loading$ | async) && !(error$ | async) && (cityWeather)'>
+    <dio-current-weather [cityWeather]='cityWeather'
+                         [isFavorite]='isCurrentFavorite$ | async'
+                         [unit]='unit$ | async'
+                         (toggleBookmark)='ontoggleBookmark()'></dio-current-weather>
+  </div>
+
+  <div *ngIf='!(loading$ | async) && (error$ | async)'>
+    <a>Tentar Novamente</a>
+  </div>
+
+</div>

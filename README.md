@@ -1,10 +1,19 @@
 # Dio Previsao Tempo
 
-npm install 
 
+primeiro 
+
+```bash
+npm install 
+```
 or 
 
+```bash
 yarn 
+```
 
+## Para Iniciar 
 
+```bash
 ng s
+```
